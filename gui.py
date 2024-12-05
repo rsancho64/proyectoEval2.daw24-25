@@ -13,30 +13,29 @@ import tkinter as tk
 #     except ValueError:
 #         resultado.config(text="Por favor, introduce un número entero válido.")
 
-def calcular_siguiente():
-    # global textHelp
-    textHelp = """
+def textHelp(): 
+    return """
         uso: <entero> retorno>
         uso: bye or BYE for exit
         uso: help : this help
     """
+
+def calcular_siguiente():
+    # global textHelp
     try:
         i = entrada.get()
-        i = i.lower().strip()        
+        i = i.lower().strip()
+
         if i == "bye":
             ventana.destroy()
-        if i == "help":
-            # resultado.configure(text=textHelp)
-            # resultado.config(text=f"{textHelp}")
-            # resultado.config(text="puta ayuda")        
-            resultado.config(text="THIS IS HELP")
-
-        numero = int(i)
-        siguiente_numero = next(numero)
-        resultado.config(text=f"Siguiente entero: {siguiente_numero}")
+        elif i == "help":
+            resultado.config(text=textHelp())
+        else:
+            numero = int(i)
+            siguiente_numero = next(numero)
+            resultado.config(text=f"Siguiente entero: {siguiente_numero}")
     except ValueError:
         resultado.config(text="Por favor, introduce un número entero válido.")
-
 
 
 if __name__ == "__main__":
