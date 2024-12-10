@@ -26,9 +26,9 @@ def calcular_siguiente():
         i = entrada.get()
         i = i.lower().strip()
 
-        if i == "bye":
+        if i in ["bye", "exit", "quit"]:
             ventana.destroy()
-        elif i == "help":
+        elif i in ["help",]:
             resultado.config(text=textHelp())
         else:
             numero = int(i)
