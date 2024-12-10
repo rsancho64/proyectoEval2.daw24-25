@@ -39,11 +39,11 @@ if __name__ == "__main__":
         i = input("entero? ")
         i = i.lower().strip()
 
-        if i == "bye":
+        if i in ["bye", "exit", "quit"]:
             print(f"ten un buen dia")            
             exit()
 
-        if i == "help":
+        if i in ["help"]:
             help()
             continue
 

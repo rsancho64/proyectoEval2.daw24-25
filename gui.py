@@ -47,6 +47,7 @@ if __name__ == "__main__":
     # Crear un cuadro de entrada
     entrada = tk.Entry(ventana)
     entrada.pack(pady=10)
+    entrada.focus()
 
     # Crear un botón que llama a la función calcular_siguiente
     boton = tk.Button(ventana, text="Calcular", command=calcular_siguiente)
@@ -56,6 +57,7 @@ if __name__ == "__main__":
     resultado = tk.Label(ventana, text="")
     resultado.pack(pady=10)
 
+    ventana.bind("<Return>",lambda event: calcular_siguiente())
     # Ejecutar el bucle principal de Tkinter
     ventana.mainloop()
 
